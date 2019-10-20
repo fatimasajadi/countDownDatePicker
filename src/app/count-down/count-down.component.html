@@ -1,0 +1,18 @@
+<div class="countdown">
+  <div class="datepicker-wrapper">
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="date">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </div>
+  <div style="flex-grow: 1;"></div>
+
+  <ul *ngIf="date!=0">
+    <li *ngIf="calcDays!=0"><span>DYS</span>{{calcDays}}</li>
+    <li *ngIf="calcDays!=0 || calcHours!=0"><span>HRS</span>{{calcHours}}</li>
+    <li *ngIf="calcDays!=0 || calcHours!=0 || calcMins!=0"><span>MIN</span>{{calcMins}}</li>
+    <li *ngIf="calcDays!=0 || calcHours!=0 || calcMins!=0 || calcSecs!=0"><span>SEC</span>{{calcSecs}}</li>
+  </ul>
+  <div style="flex-grow: 1;"></div>
+</div>
